@@ -1,0 +1,8 @@
+<template name="my-footer">
+  <view class="weui-footer" style="margin-top: 35px;">
+    <view class="weui-footer__links">
+      <navigator class="weui-footer__link weui-wa-hotarea" url="oplanet.cn">日日是好日</navigator>
+    </view>
+    <view class="weui-footer__text">技术支持：徐亦快</view>
+  </view>
+</template>

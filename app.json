@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/map/map",
+    "pages/weather/index",
+    "pages/weather/map",
+    "pages/logs/logs",
+    "pages/logs/camera/camera"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#4000bf",
+    "navigationBarTitleText": "Acie",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "尝试获取位置信息"
+    }
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/static/images/search.png",
+      "selectedIconPath": "/static/images/search-actived.png"
+    },{
+      "pagePath": "pages/map/map",
+      "text": "地图",
+      "iconPath": "/static/images/marker.png",
+      "selectedIconPath": "/static/images/marker_checked.png"
+    },{
+      "pagePath": "pages/weather/index",
+      "iconPath": "/static/images/featured.png",
+      "selectedIconPath": "/static/images/featured-actived.png",
+      "text": "天气"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "iconPath": "/static/images/profile.png",
+      "selectedIconPath": "/static/images/profile-actived.png",
+      "text": "日志"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

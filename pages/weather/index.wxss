@@ -1,0 +1,8 @@
+/* pages/weather/index.wxss */
+.weui-grid {
+  width: 25%;
+}
+.weui-grid__icon > image {
+  width: 30px;
+  height: 30px;
+}
