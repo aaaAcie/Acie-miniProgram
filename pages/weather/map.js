@@ -1,13 +1,24 @@
 // pages/weather/map.js
+const amap = require('../../utils/amap-config')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    poisData: [],
+    markers: []
   },
-
+  bindMarker(e){
+    const that = this
+    const id = e.detail.markerId
+    this.setData({
+      markerText: {
+        name: that.data.poisData[id].name,
+        address: that.data.poisData[id].address
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -15,6 +26,43 @@ Page({
     // console.log(options.k)
     wx.setNavigationBarTitle({
       title: '周边' + options.k,
+    })
+    const that = this
+    amap.map.getPoiAround({
+      querykeywords: options.k,
+      success: function(data){
+        //成功回调
+        data.markers.forEach(marker => {
+          marker.iconPath = '/static/images/location.png'
+          marker.width = 40
+          marker.height = 40
+        })
+        console.log(data)
+
+        that.setData({
+          poisData: data.poisData,
+          markers: data.markers
+        })
+        that.setData({
+          setting: {
+            scale: 14,
+            // style: 'width: 100%; height: 160px;',
+            latitude: wx.getStorageSync('latitude'),
+            longitude: wx.getStorageSync('longitude'),
+          }
+        })
+        // console.log(data.poisData)
+        that.setData({
+          markerText: {
+            name: that.data.poisData[0].name,
+            address: that.data.poisData[0].address
+          }
+        })
+      },
+      fail: function(info){
+        //失败回调
+        console.log(info)
+      }
     })
   },
 
