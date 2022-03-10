@@ -64,6 +64,9 @@ Page({
     amap.map.getRegeo({
       success(res) {
         console.log(res)
+        const city = res[0].name.split('市')[0]
+        // console.log(city)
+        wx.setStorageSync('city', city)
         that.setData({
           des: res[0],
           setting: {

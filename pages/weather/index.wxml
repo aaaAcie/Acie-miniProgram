@@ -37,12 +37,6 @@
         </view>
       </navigator>
     </view>
-    <view class="weui-panel__ft">
-      <navigator class="weui-cell weui-cell_active weui-cell_access weui-cell_link" url="javascript:">
-        <text class="weui-cell__bd">查看更多</text>
-        <text class="weui-cell__ft"></text>
-      </navigator>
-    </view>
   </view>
 </view>
 

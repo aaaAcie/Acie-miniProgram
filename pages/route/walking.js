@@ -56,7 +56,7 @@ Page({
     amap.map.getTransitRoute({
       origin: wx.getStorageSync('userLocation'),
       destination: that.data.destination,
-      city: '宁波',
+      city: wx.getStorageSync('city'),
       success: function(data){
         console.log(data)
         if(data && data.transits){
