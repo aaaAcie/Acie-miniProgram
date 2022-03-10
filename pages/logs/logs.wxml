@@ -1,7 +1,10 @@
 <!--logs.wxml-->
-<button type="primary" style="margin-top: 20rpx;width: 70%;" bindtap="goCamera">去拍照</button>
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log.date}}</text>
-  </block>
+<view class="page">
+  <button type="primary" class="button" style="margin-top: 20rpx;width: 70%;" bindtap="goCamera">去拍照</button>
+  <!-- <view class="container log-list">
+    <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+      <text class="log-item">{{index + 1}}. {{log.date}}</text>
+    </block>
+  </view> -->
+  <image src="/static/images/vc.png"></image>
 </view>
