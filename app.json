@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/map/map",
+    "pages/route/walking",
     "pages/weather/index",
     "pages/weather/map",
     "pages/logs/logs",
