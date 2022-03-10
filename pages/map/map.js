@@ -49,6 +49,13 @@ Page({
       }
     })
   },
+  goRoute(e){
+    if(e.currentTarget.dataset.destination){
+      wx.navigateTo({
+        url: '/pages/route/walking?destination=' + e.currentTarget.dataset.destination
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

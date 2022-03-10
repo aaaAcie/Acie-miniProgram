@@ -1,0 +1,25 @@
+<!--pages/route/walking.wxml-->
+<view class="flex-style">
+  <view class="flex-item {{_type=='1' ? 'active': ''}}" data-type="1" bindtouchstart="goToCar">驾车</view>
+  <view class="flex-item {{_type=='2' ? 'active': ''}}" data-type="2" bindtouchstart="goToWalk">步行</view>
+  <view class="flex-item {{_type=='3' ? 'active': ''}}" data-type="3" bindtouchstart="goToRide">骑行</view>
+  <view class="flex-item {{_type=='4' ? 'active': ''}}" data-type="4" bindtouchstart="goToBus">公交</view>
+</view>
+<view class="map_box">
+  <map id="navi_map" setting="{{setting}}" polyline="{{polyline}}"></map>
+</view>
+<view class="weui-panel weui-panel_access panel" wx:if="{{_type=='4'}}">
+  <view class="weui-panel__hd">公交出行方案</view>
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text" aria-role="option" wx:for="{{transits}}" wx:key="index">
+      <text class="weui-media-box__title">{{index+1}}. {{item.transportName}}</text>
+      <view class="weui-media-box__desc">{{item.minute}}分钟 {{item.cost}}元 {{item.distance}}公里 步行{{item.walking_distance}}米</view>
+    </view>
+  </view>
+</view>
+
+<view class="text_box">
+  <view class="text">路程 {{distance}}</view>
+  <view class="text">预计花费 {{cost}}</view>
+  <view class="detail_button" bindtouchstart="goDetail">详情</view>
+</view>
