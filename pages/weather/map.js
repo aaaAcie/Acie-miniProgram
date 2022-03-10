@@ -54,8 +54,6 @@ Page({
         })
         that.setData({
           setting: {
-            scale: 14,
-            // style: 'width: 100%; height: 160px;',
             latitude: wx.getStorageSync('latitude'),
             longitude: wx.getStorageSync('longitude'),
           }

@@ -6,7 +6,7 @@
   <view class="flex-item {{_type=='4' ? 'active': ''}}" data-type="4" bindtouchstart="goToBus">公交</view>
 </view>
 <view class="map_box">
-  <map id="navi_map" setting="{{setting}}" polyline="{{polyline}}"></map>
+  <map id="navi_map" latitude="{{setting.latitude}}" longitude="{{setting.longitude}}" markers="{{setting.markers}}" scale="14" polyline="{{polyline}}"></map>
 </view>
 <view class="weui-panel weui-panel_access panel" wx:if="{{_type=='4'}}">
   <view class="weui-panel__hd">公交出行方案</view>

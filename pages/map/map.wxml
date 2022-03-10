@@ -22,7 +22,7 @@
       <view aria-role="button" class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
 		</view>
     <view aria-role="listbox" id="searchResult" class="weui-cells searchbar-result search-list" wx:if="{{inputVal.length > 0}}">
-			<view role="option" class="weui-cell weui-cell_active weui-cell_access" wx:for="{{tips}}" wx:key="id" bindtap="goRoute" data-destination="{{item.location}}">
+			<view role="option" class="weui-cell weui-cell_active weui-cell_access" wx:for="{{tips}}" wx:key="id" bindtap="goRoute" data-destination="{{item.location}}" data-name="{{item.name}}">
 				<view class="weui-cell__bd weui-cell_primary">
 					<view>{{item.name}}</view>
 					<view class="search-text">{{item.district}}，{{item.address}}</view>
@@ -30,7 +30,8 @@
 			</view>
 		</view>
   </view>
-  <map class="map" setting="{{setting}}"></map>
+  <!-- <map class="map" setting="{{setting}}"></map> -->
+  <map class="map" latitude="{{setting.latitude}}" longitude="{{setting.longitude}}" markers="{{setting.markers}}" scale="14"></map>
   <view class="des">
     <text>{{des.name}}，</text>
     <text>{{des.desc}}</text>

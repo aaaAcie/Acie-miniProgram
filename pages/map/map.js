@@ -52,7 +52,7 @@ Page({
   goRoute(e){
     if(e.currentTarget.dataset.destination){
       wx.navigateTo({
-        url: '/pages/route/walking?destination=' + e.currentTarget.dataset.destination
+        url: '/pages/route/walking?destination=' + e.currentTarget.dataset.destination + '&name=' + e.currentTarget.dataset.name
       })
     }
   },
@@ -76,13 +76,13 @@ Page({
             longitude: wx.getStorageSync('longitude'),
             markers: [{
               id: 0,
-              iconPath: '/static/images/location.png',
+              iconPath: wx.getStorageSync('avatar') || '/static/images/location.png',
               width: 40,
               height: 40,
               callout: {
                 'display': 'ALWAYS',
                 'fontsize': '30rpx',
-                'content': 'you are here',
+                'content': wx.getStorageSync('nickName'),
                 'boxShadow': '0 0 5rpx #333',
                 'padding': '8rpx'
               },

@@ -1,7 +1,7 @@
 <!--pages/weather/map.wxml-->
 <text>pages/weather/map.wxml</text>
 <view class="map_container">
-  <map class="map" markers="{{markers}}" setting="{{setting}}" bindmarkertap="bindMarker"></map>
+  <map class="map" markers="{{markers}}" latitude="{{setting.latitude}}" longitude="{{setting.longitude}}" scale="14" bindmarkertap="bindMarker"></map>
 </view>
 <view class="des">
   <text>{{markerText.name}}，</text>

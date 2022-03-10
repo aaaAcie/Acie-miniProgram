@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '导航至' + options.destination,
+      title: '导航至' + options.name,
     })
     this.setData({
       destination: options.destination
