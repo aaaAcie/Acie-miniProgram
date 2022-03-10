@@ -11,12 +11,21 @@ Page({
   },
   bindMarker(e){
     const that = this
+    // 重置所有 iconPath
+    this.data.markers.forEach(marker => {
+      marker.iconPath = '/static/images/marker.png'
+    })
     const id = e.detail.markerId
+    // 修改指定 iconPath
+    this.data.markers[id].iconPath = '/static/images/marker_checked.png'
+
     this.setData({
       markerText: {
         name: that.data.poisData[id].name,
         address: that.data.poisData[id].address
-      }
+      },
+      // 进行数据更新
+      markers: that.data.markers
     })
   },
   /**
